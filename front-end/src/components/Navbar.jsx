@@ -1,30 +1,82 @@
+import  { useState } from 'react';
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <div>
-        <header className="text-gray-600 body-font">
-  <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-    <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-      </svg>
-      <span className="ml-3 text-xl">Tailblocks</span>
+      <nav className="mx-auto flex flex-wrap items-center justify-between p-5 bg-indigo-950 lg:justify-around">
+        <a className="flex title-font font-medium items-center text-gray-50 mb-1 md:mb-1">
+    <img className="w-10 h-10" src="pic.png" alt="" />
+      <span className="ml-3 text-xl">NIIT Nexus</span>
     </a>
-    <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-      <a className="mr-5 hover:text-gray-900">First Link</a>
-      <a className="mr-5 hover:text-gray-900">Second Link</a>
-      <a className="mr-5 hover:text-gray-900">Third Link</a>
-      <a className="mr-5 hover:text-gray-900">Fourth Link</a>
-    </nav>
-    <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
-      <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
-        <path d="M5 12h14M12 5l7 7-7 7"></path>
-      </svg>
-    </button>
-  </div>
-</header>
+        <div className="flex lg:hidden">
+          <button id="hamburger" onClick={toggleMenu}>
+            <img
+              className={`toggle ${menuOpen ? 'hidden' : 'block'}`}
+              src="https://img.icons8.com/fluent-systems-regular/2x/menu-squared-2.png"
+              width="40"
+              height="40"
+              alt="Menu"
+            />
+            <img
+              className={`toggle ${menuOpen ? 'block' : 'hidden'}`}
+              src="https://img.icons8.com/fluent-systems-regular/2x/close-window.png"
+              width="40"
+              height="40"
+              alt="Close"
+            />
+          </button>
+        </div>
+        <div
+          className={`toggle ${menuOpen ? 'block' : 'hidden'} w-full lg:w-auto lg:flex text-right text-bold mt-5 lg:mt-0 border-t-2 border-blue-900 lg:border-none`}
+        >
+          <a
+            href="#"
+            className="block lg:inline-block text-slate-100 hover:text-yellow-100 px-3 py-3 border-b-2 border-blue-900 lg:border-none"
+          >
+            Home
+          </a>
+          <a
+            href="#"
+            className="block lg:inline-block text-slate-100 hover:text-yellow-100 px-3 py-3 border-b-2 border-blue-900 lg:border-none"
+          >
+            Products
+          </a>
+          <a
+            href="#"
+            className="block lg:inline-block text-slate-100 hover:text-yellow-100 px-3 py-3 border-b-2 border-blue-900 lg:border-none"
+          >
+            Pricing
+          </a>
+          <a
+            href="#"
+            className="block lg:inline-block text-slate-100 hover:text-yellow-100 px-3 py-3 border-b-2 border-blue-900 lg:border-none"
+          >
+            Contact
+          </a>
+        </div>
+        <div className='hidden lg:flex lg:flex-row'>
+        <a
+          href="#"
+          className={`hidden  lg:flex w-full lg:w-auto px-4 py-2 text-right font-semibold bg-blue-800 hover:bg-blue-700 text-white lg:rounded lg:mr-5`}
+        >
+          Login
+        </a>
+        <a
+          href="#"
+          className={`hidden lg:flex w-full lg:w-auto px-4 py-2 text-right font-semibold bg-amber-400 hover:bg-yellow-400 text-indigo-950 lg:rounded`}
+        >
+          Sign Up
+        </a>
+        </div>
+      </nav>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
