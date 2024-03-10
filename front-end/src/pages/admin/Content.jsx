@@ -18,7 +18,7 @@ const Content = ({activeLink}) => {
 
 
   return (
-    <div >
+    <div className="mx-auto h-full ">
       {content}
     </div>
   )

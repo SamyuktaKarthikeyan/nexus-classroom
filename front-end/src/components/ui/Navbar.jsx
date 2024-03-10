@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+  const navigate=useNavigate();
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [accountDropdownOpen, setAccountDropdownOpen] = useState(false);
 
@@ -41,38 +44,38 @@ const Navbar = () => {
           className={`toggle ${menuOpen ? 'block' : 'hidden'} w-full lg:w-auto lg:flex text-right text-bold mt-5 lg:mt-0 border-t-2 border-blue-900 lg:border-none`}
         >
           <a
-            href="#"
-            className="block lg:inline-block text-slate-100 hover:text-yellow-100 px-3 py-3 border-b-2 border-blue-900 lg:border-none"
+            onClick={() => navigate('/nexus/user/home')}
+            className="block lg:inline-block cursor-pointer text-slate-100 hover:text-yellow-100 px-3 py-3 border-b-2 border-blue-900 lg:border-none"
           >
             Home
           </a>
           <a
-            href="#"
-            className="block lg:inline-block text-slate-100 hover:text-yellow-100 px-3 py-3 border-b-2 border-blue-900 lg:border-none"
+            onClick={() => navigate('/nexus/user/courses')}
+            className="block lg:inline-block cursor-pointer text-slate-100 hover:text-yellow-100 px-3 py-3 border-b-2 border-blue-900 lg:border-none"
           >
-            Products
+            Courses
+          </a>
+          <a
+            onClick={() => navigate('/nexus/user/about-us')}
+            className="block lg:inline-block cursor-pointer text-slate-100 hover:text-yellow-100 px-3 py-3 border-b-2 border-blue-900 lg:border-none"
+          >
+            About Us
+          </a>
+          <a
+            onClick={() => navigate('/nexus/user/faqs')}
+            className="block lg:inline-block cursor-pointer text-slate-100 hover:text-yellow-100 px-3 py-3 border-b-2 border-blue-900 lg:border-none"
+          >
+            FAQ
           </a>
           <a
             href="#"
-            className="block lg:inline-block text-slate-100 hover:text-yellow-100 px-3 py-3 border-b-2 border-blue-900 lg:border-none"
-          >
-            Pricing
-          </a>
-          <a
-            href="#"
-            className="block lg:inline-block text-slate-100 hover:text-yellow-100 px-3 py-3 border-b-2 border-blue-900 lg:border-none"
-          >
-            Contact
-          </a>
-          <a
-            href="#"
-            className="block lg:hidden text-slate-100 hover:text-yellow-100 px-3 py-3 border-b-2 border-blue-900 lg:border-none"
+            className="block lg:hidden  cursor-pointer text-slate-100 hover:text-yellow-100 px-3 py-3 border-b-2 border-blue-900 lg:border-none"
           >
             Account
           </a>
           <a
             href="#"
-            className="block lg:hidden text-slate-100 hover:text-yellow-100 px-3 py-3 border-b-2 border-blue-900 lg:border-none"
+            className="block lg:hidden cursor-pointer text-slate-100 hover:text-yellow-100 px-3 py-3 border-b-2 border-blue-900 lg:border-none"
           >
             Log Out
           </a>
@@ -99,16 +102,16 @@ const Navbar = () => {
         </div>
       </nav>
             {accountDropdownOpen && (
-              <div className="absolute mt-0 mr-3.5 right-0 bg-white w-32 py-2 rounded-md shadow-lg z-10">
+              <div className="absolute mt-0  mr-3.5 right-0 bg-white w-32 py-2 rounded-md shadow-lg z-10">
                 <a
-                  href="#"
-                  className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                  onClick={()=>navigate("/nexus/user/account")}
+                  className="block px-4 py-2 cursor-pointer text-gray-800 hover:bg-gray-200"
                 >
                   Account
                 </a>
                 <a
                   href="#"
-                  className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                  className="block px-4 py-2 cursor-pointer text-gray-800 hover:bg-gray-200"
                 >
                   Log Out
                 </a>

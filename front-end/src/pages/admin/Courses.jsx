@@ -2,7 +2,7 @@ import CourseGallery from '../../components/CourseGallery'
 
 const Courses = () => {
   return (
-    <div className="pr-10 pb-10">
+    <div className="p-20">
         <CourseGallery/>
     </div>
   )

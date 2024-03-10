@@ -13,8 +13,8 @@ const Homepage = () => {
 Discover courses with ease and streamline your inquiry process with our Online Course Inquiry and Information System, eliminating the hassle of navigating through numerous options and providing comprehensive details at your fingertips.</p>
 <a  href="https://icons8.com/icon/Alsmzv0mFxxJ/menu" className="hidden">Menu</a> <a href="https://icons8.com" className="hidden">Icons8</a>
       <div className="flex justify-center">
-        <button className="ml-2 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-        <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
+        <button className="ml-2 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" >Explore Courses</button>
+        <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Dashboard</button>
       </div>
     </div>
     <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
